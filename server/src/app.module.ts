@@ -9,6 +9,13 @@ import { BoilerPartsModule } from './boiler-parts/boiler-parts.module';
 import { ShoppingCartModule } from './shopping-cart/shopping-cart.module';
 import { PaymentModule } from './payment/payment.module';
 
+
+import { DataSource } from 'typeorm';
+
+@Module({
+  imports: [TypeOrmModule.forRoot(), UsersModule],
+})
+
 @Module({
   imports: [
     SequelizeModule.forRootAsync({
@@ -25,4 +32,6 @@ import { PaymentModule } from './payment/payment.module';
     PaymentModule,
   ],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private dataSource: DataSource) {}
+}

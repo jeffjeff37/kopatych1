@@ -19,7 +19,7 @@ async function bootstrap() {
 
   app.enableCors({
     credentials: true,
-    origin: ['http://localhost:3001', 'https://shop-gtm-c.onrender.com'],
+    origin: ['http://localhost:3001', 'kopatych-client.vercel.app'],
   });
 
   const config = new DocumentBuilder()
